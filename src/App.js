@@ -1,19 +1,22 @@
-import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navigation from "./Navigation";
-import Product from "./Product";
 import Footer from "./Footer";
+import Home from "./Home";
 import Cart from "./Cart";
+import Aboutus from "./Aboutus";
 
 const App = () => {
 	return (
 		<>
-			<Navigation />
-			<article className='bunch-of-products'>
-				<h1 className='company-name'>AMAZONA</h1>
-				<p className='tag-line'>Sabki Appni Appni Dukan</p>
-				<Product />
-			</article>
-			<Footer />
+			<BrowserRouter>
+				<Navigation />
+				<Routes>
+					<Route path='/' element={<Home />} exact />
+					<Route path='/cart' element={<Cart />} />
+					<Route path='/about-us' element={<Aboutus />} />
+				</Routes>
+				<Footer />
+			</BrowserRouter>
 		</>
 	);
 };

@@ -25,16 +25,22 @@
 }
 
 .bunch-of-products {
-	padding: 7rem 0;
+	padding: 6rem 0;
 	max-width: 1360px;
 	margin: auto;
+}
+
+.loading {
+	width: max-content;
+	margin: 2rem auto;
+	font-size: 2rem;
 }
 
 .company-name,
 .tag-line {
 	font-size: 3rem;
+	max-width: max-content;
 	margin: auto;
-	width: max-content;
 	position: relative;
 	z-index: -999;
 }
@@ -48,6 +54,7 @@
 
 .tag-line {
 	font-size: 0.95rem;
+	margin-bottom: 4rem;
 }
 
 .tag-line::after {
@@ -110,12 +117,32 @@
 	}
 }
 
+.pagenumber-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	li {
+		padding: 0.5rem 0.8rem;
+		border: 1px solid $nav-background-clr;
+		margin: 0.5rem;
+		cursor: pointer;
+		transition: background 500ms, color 500ms;
+
+		&:hover {
+			background-color: $footer-background;
+			color: aliceblue;
+		}
+	}
+}
+
 .footer-container {
 	padding: 2rem;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-template-rows: 1fr;
 	place-items: center;
+	width: 100%;
 	background-color: $footer-background;
 
 	h5 {
@@ -136,7 +163,9 @@
 
 .empty-cart {
 	display: grid;
-	place-items: center;
+	justify-items: center;
+	align-content: center;
+	height: 90vh;
 
 	p {
 		font-weight: bolder;
@@ -150,4 +179,11 @@
 			background-color: $add-to-cart-hover-background;
 		}
 	}
+}
+
+.about {
+	display: grid;
+	justify-items: center;
+	align-content: center;
+	height: 90vh;
 }

@@ -1,10 +1,13 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
+	const navigate = useNavigate();
+
 	return (
 		<section className='empty-cart'>
-			<p className='empty-cart-msg'>Your Cart Is Empty !</p>
-			<button className='back-btn'>Contiune Shopping</button>
+			<p>Your Cart Is Empty !</p>
+			<button onClick={() => navigate("/")}>Contiune Shopping</button>
 		</section>
 	);
 };
