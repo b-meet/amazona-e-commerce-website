@@ -1,7 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useGlobalContext } from "./Context";
 
 const Navigation = () => {
+	const { itemsAdded } = useGlobalContext();
+
 	return (
 		<nav>
 			<ul className='nav-ul'>
@@ -12,7 +15,9 @@ const Navigation = () => {
 					<Link to='/about-us'>About Us</Link>
 				</li>
 				<li>
-					<Link to='/cart'>Cart</Link>
+					<Link to='/cart'>
+						{itemsAdded ? `Cart ( ${itemsAdded} )` : `Cart`}
+					</Link>
 				</li>
 			</ul>
 		</nav>

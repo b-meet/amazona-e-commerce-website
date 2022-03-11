@@ -1,8 +1,11 @@
 import React from "react";
-
-const url = "https://fakestoreapi.com/products";
+import { Link } from "react-router-dom";
+import { useGlobalContext } from "./Context";
 
 const Product = ({ data, loading }) => {
+	const { getIndividualProductInfo, getSelectedProductInfo } =
+		useGlobalContext();
+
 	return (
 		<>
 			{loading ? (
@@ -14,9 +17,12 @@ const Product = ({ data, loading }) => {
 							<img src={image} alt='product preview' />
 							<div className='product-details'>
 								<h2>
-									<a href='#'>
+									<Link
+										onClick={() => getIndividualProductInfo(id, data)}
+										to={"/product-page"}
+									>
 										{title.length > 35 ? title.slice(0, 35) + "..." : title}
-									</a>
+									</Link>
 								</h2>
 								<p>
 									{" "}
@@ -25,7 +31,12 @@ const Product = ({ data, loading }) => {
 										: description}
 								</p>
 								<span>$ {price}</span>
-								<button className='add-btn'>Add to Cart</button>
+								<button
+									onClick={() => getSelectedProductInfo(id, data)}
+									className='add-btn'
+								>
+									Add to Cart
+								</button>
 								<button className='buy-btn'>Buy Now</button>
 							</div>
 						</section>

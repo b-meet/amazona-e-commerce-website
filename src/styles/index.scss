@@ -34,6 +34,7 @@
 	width: max-content;
 	margin: 2rem auto;
 	font-size: 2rem;
+	height: 60vh;
 }
 
 .company-name,
@@ -161,6 +162,8 @@
 	}
 }
 
+// Styles for cart page
+
 .empty-cart {
 	display: grid;
 	justify-items: center;
@@ -181,9 +184,61 @@
 	}
 }
 
+// Styles for About page
+
 .about {
 	display: grid;
 	justify-items: center;
 	align-content: center;
 	height: 90vh;
+}
+
+//Styles For product page
+
+.product-page {
+	width: 90%;
+	margin: auto;
+	padding: 10rem 0;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: auto;
+	place-items: center;
+
+	img {
+		width: 75%;
+	}
+}
+
+.product-info {
+	align-self: start;
+	max-width: 85%;
+
+	h1 {
+		font-size: 2rem;
+	}
+
+	h4 {
+		margin: 2rem 0;
+		color: $nav-background-clr;
+		padding: 0.3rem 1rem 0.5rem;
+		border-radius: 7px;
+		font-weight: normal;
+		width: max-content;
+		background-color: $product-category-background;
+	}
+
+	p {
+		font-size: 0.95rem;
+	}
+
+	span {
+		display: block;
+		margin: 2.5rem 0;
+		font-weight: bolder;
+	}
+}
+
+.rating {
+	margin: 1rem 0;
+	padding: 1rem 0;
 }
