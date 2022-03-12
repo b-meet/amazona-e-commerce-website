@@ -7,6 +7,8 @@ const Cart = () => {
 	const {
 		uniqueItemsInCart,
 		getIndividualProductInfo,
+		decreaseQuantity,
+		increaseQuantity,
 		remove,
 		number,
 		grandTotal,
@@ -37,9 +39,9 @@ const Cart = () => {
 										<h5>$ {price}</h5>
 									</div>
 									<div className='counter'>
-										<button>-</button>
+										<button onClick={() => decreaseQuantity(id)}>-</button>
 										<p>{number}</p>
-										<button>+</button>
+										<button onClick={() => increaseQuantity(id)}>+</button>
 										<button onClick={() => remove(id)} className='remove-item'>
 											Remove Form Cart
 										</button>
