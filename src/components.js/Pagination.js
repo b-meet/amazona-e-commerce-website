@@ -21,3 +21,5 @@ const Pagination = ({ totalProducts, productsPerPage, changePage }) => {
 };
 
 export default Pagination;
+
+//props are passed from home.js

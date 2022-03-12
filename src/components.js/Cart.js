@@ -67,3 +67,5 @@ const Cart = () => {
 };
 
 export default Cart;
+
+//refer context.js to know about functions
