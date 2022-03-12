@@ -41,14 +41,20 @@ export const Context = ({ children }) => {
 			if (item.id === id) {
 				setNumber((prevState) => prevState + 1);
 			}
+			return item;
 		});
 	};
 
 	const decreaseQuantity = (id) => {
 		uniqueItemsInCart.map((item) => {
 			if (item.id === id) {
-				setNumber((prevState) => prevState - 1);
+				if (number == 1) {
+					setNumber(number);
+				} else {
+					setNumber((prevState) => prevState - 1);
+				}
 			}
+			return item;
 		});
 	};
 
