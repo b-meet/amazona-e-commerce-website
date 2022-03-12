@@ -23,6 +23,13 @@ export const Context = ({ children }) => {
 	const uniqueItemsInCart = [...new Set(inCartProductInfo)];
 	const itemsAdded = uniqueItemsInCart.length;
 
+	let grandTotal = uniqueItemsInCart.map((item) => item.price * number);
+	let payableAmount = (grandTotal) => {
+		let sum = 0;
+		grandTotal.map((value) => (sum += value));
+		return sum;
+	};
+
 	return (
 		<ProductContext.Provider
 			value={{
@@ -33,6 +40,8 @@ export const Context = ({ children }) => {
 				uniqueItemsInCart,
 				remove,
 				number,
+				grandTotal,
+				payableAmount,
 			}}
 		>
 			{children}

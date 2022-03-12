@@ -16,7 +16,7 @@ const IndividualProduct = () => {
 				<img src={image} alt='Product' />
 				<section className='product-info'>
 					<h1>{title}</h1>
-					<h4>{category}</h4>
+					<h4 className='category'>{category}</h4>
 					<p>{description}</p>
 					<span>$ {price}</span>
 					<button

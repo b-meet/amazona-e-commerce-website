@@ -4,8 +4,14 @@ import { useGlobalContext } from "./Context";
 import { Link } from "react-router-dom";
 
 const Cart = () => {
-	const { uniqueItemsInCart, getIndividualProductInfo, remove, number } =
-		useGlobalContext();
+	const {
+		uniqueItemsInCart,
+		getIndividualProductInfo,
+		remove,
+		number,
+		grandTotal,
+		payableAmount,
+	} = useGlobalContext();
 
 	const navigate = useNavigate();
 
@@ -14,7 +20,7 @@ const Cart = () => {
 			{uniqueItemsInCart.length ? (
 				<>
 					{uniqueItemsInCart.map(({ image, title, price, id }) => {
-						let subTotal = Math.ceil(price);
+						let subTotal = price * number;
 						return (
 							<article className='container' key={id}>
 								<img src={image} alt='product' />
@@ -43,7 +49,10 @@ const Cart = () => {
 							</article>
 						);
 					})}
-					<p>Total: {}</p>
+					<article className='price-details-container'>
+						<p>Total: $ {payableAmount(grandTotal)}</p>
+						<button>Proceed To Pay</button>
+					</article>
 				</>
 			) : (
 				<section className='empty-cart'>
