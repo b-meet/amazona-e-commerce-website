@@ -9,17 +9,14 @@
 	min-width: 100%;
 	background-color: $nav-background-clr;
 	position: fixed;
+	top: 0;
 
-	li {
-		padding: 1rem 0;
+	a {
+		padding: 1rem;
+		color: $nav-link-clr;
 
-		a {
-			padding: 0 1rem;
-			color: $nav-link-clr;
-
-			&:hover {
-				color: $nav-link-hover-clr;
-			}
+		&:hover {
+			color: $nav-link-hover-clr;
 		}
 	}
 }
@@ -34,7 +31,7 @@
 	width: max-content;
 	margin: 2rem auto;
 	font-size: 2rem;
-	height: 60vh;
+	height: 50vh;
 }
 
 .company-name,
@@ -138,7 +135,7 @@
 }
 
 .footer-container {
-	padding: 2rem;
+	padding: 6rem;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-template-rows: 1fr;
@@ -241,4 +238,54 @@
 .rating {
 	margin: 1rem 0;
 	padding: 1rem 0;
+}
+
+//styles for Cart.js
+
+.container {
+	box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.2);
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: auto;
+	justify-items: center;
+	margin: 4.5rem auto 1rem;
+	padding: 1rem;
+	max-width: 75%;
+
+	img {
+		width: 35%;
+	}
+}
+
+.selected-product-info {
+	h5 {
+		margin: 1.5rem 0 1rem;
+		font-size: 1rem;
+		font-weight: bolder;
+	}
+}
+
+.counter {
+	display: flex;
+	align-items: center;
+
+	.remove-item {
+		background-color: rgb(255, 85, 85);
+		margin: 1.5rem;
+	}
+	button {
+		padding: 0.71rem 1rem;
+		margin: 0;
+	}
+
+	p {
+		padding: 0.5rem 1rem;
+	}
+}
+
+.total {
+	background-color: $product-category-background;
+	align-self: end;
+	padding: 0.5rem 1rem;
+	border-radius: 6px;
 }

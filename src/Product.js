@@ -3,8 +3,7 @@ import { Link } from "react-router-dom";
 import { useGlobalContext } from "./Context";
 
 const Product = ({ data, loading }) => {
-	const { getIndividualProductInfo, getSelectedProductInfo } =
-		useGlobalContext();
+	const { getIndividualProductInfo, getInCartProductInfo } = useGlobalContext();
 
 	return (
 		<>
@@ -32,7 +31,7 @@ const Product = ({ data, loading }) => {
 								</p>
 								<span>$ {price}</span>
 								<button
-									onClick={() => getSelectedProductInfo(id, data)}
+									onClick={() => getInCartProductInfo(id, data)}
 									className='add-btn'
 								>
 									Add to Cart
